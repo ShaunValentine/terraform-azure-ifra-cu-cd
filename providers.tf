@@ -12,3 +12,15 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate-shaun"
+    storage_account_name = "sttfstateshaun7823"
+    container_name       = "tfstate"
+    key                  = "project1.terraform.tfstate"
+  }
+
+  # required_providers block as before...
+}
+
